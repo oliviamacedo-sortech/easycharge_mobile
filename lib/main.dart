@@ -7,13 +7,13 @@ class EasychargeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: ListaDeClientes(),
+        body: ListaClientes(),
       ),
     );
   }
 }
 
-class ListaDeClientes extends StatelessWidget {
+class ListaClientes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +22,8 @@ class ListaDeClientes extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ItemCliente(Cliente('José Roberto', 'CPF: 031.845.201-45')),
-          ItemCliente(Cliente('Claudia Silva', 'CPF: 090.651.414-21')),
+          ItemCliente(Cliente('José Roberto', '031.845.201-45')),
+          ItemCliente(Cliente('Claudia Silva', '090.651.414-21')),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -45,7 +45,7 @@ class ItemCliente extends StatelessWidget {
       child: ListTile(
         leading: const Icon(Icons.people),
         title: Text(cliente.nome),
-        subtitle: Text(cliente.cpf),
+        subtitle: Text('CPF: ' + cliente.cpf),
       ),
     );
   }
